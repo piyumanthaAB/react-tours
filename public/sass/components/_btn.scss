@@ -1,0 +1,10 @@
+.btn {
+  padding: 1rem 2rem;
+  //   background-color: red;
+  text-decoration: none;
+
+  &-link {
+    border-radius: 1rem;
+    background-color: $color-blue;
+  }
+}

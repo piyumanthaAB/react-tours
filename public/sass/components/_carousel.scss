@@ -1,0 +1,98 @@
+.carousel__img {
+  height: 20rem;
+  width: 15rem;
+
+  border-radius: 1rem;
+
+  &-title {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+  }
+}
+
+.ratings {
+  display: flex;
+  margin: 0.5rem 0 1rem;
+  &__item {
+    margin: 0 0.2rem;
+    color: rgba($color: $color-white, $alpha: 1);
+    font-size: 0.6rem;
+
+    &-light {
+      color: rgba($color: $color-white, $alpha: 0.5);
+    }
+  }
+}
+
+.carousel {
+  // background-color: yellow;
+  min-height: 50rem;
+  padding: 2rem;
+}
+
+.arrow {
+  border-radius: 50%;
+  padding: 1rem;
+  color: rgba($color: $color-white, $alpha: 0.8);
+
+  font-size: 2rem;
+
+  background-color: rgba($color: $color-gray, $alpha: 0.4);
+  backdrop-filter: blur(200px);
+  position: absolute;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($color: $color-gray, $alpha: 0.8);
+  }
+}
+
+.next {
+  top: 100%;
+  left: 10%;
+}
+
+.prev {
+  top: 100%;
+  left: 0;
+}
+
+.slide {
+  transform: scale(0.8);
+  transition: all 0.5s;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // background-color: greenyellow;
+
+  height: 40rem;
+  display: flex !important;
+  align-items: baseline;
+  padding-left: 2rem;
+}
+
+.activeSlide {
+  & img {
+    height: 30rem;
+    width: 20rem;
+  }
+  padding: 1rem;
+  transform: scale(1.1);
+  opacity: 1;
+  height: 40rem;
+
+  display: flex !important;
+  flex-direction: column;
+  align-items: baseline;
+
+  // background-color: red;
+}

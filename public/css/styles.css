@@ -1,0 +1,280 @@
+/*
+
+0 - 600px   :   phone
+600 - 900px   :   tablet portraite
+900 - 1200px   :   tablet landscape
+[1200 - 1800 ] : is our normal styles is applied
+1800+   :   Big screes
+
+
+*/
+/*
+# breakpoint argument choises
+
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+
+1em = 16px
+
+ORDER: Base + typography > general layout + grid > page layout > components
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* This is now used to calculate rem , now 1rem=10px. Otherwise it would be 1rem=16px. 16px is the default text value of the html page.  */
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  background-color: #59abae;
+  padding: 1rem 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh; }
+
+.nav {
+  color: #fff; }
+  .nav__brand {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.7rem; }
+  .nav__item a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600; }
+  .nav__user {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem; }
+
+.content__heading {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-size: 7rem; }
+
+.content__details {
+  font-family: "Open Sans", sans-serif;
+  color: #fff; }
+
+.btn-link {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500; }
+
+.App {
+  min-height: 70rem;
+  background-color: #c2d2cf;
+  background-image: linear-gradient(25deg, rgba(4, 17, 23, 0.9) 0%, rgba(4, 17, 23, 0.4) 40%, rgba(4, 17, 23, 0.4) 60%, rgba(4, 17, 23, 0.9) 100%), url("./../img/bali-L.jpg");
+  background-size: cover;
+  box-shadow: 0 2rem 2rem #125a53; }
+
+#root {
+  flex: 0 1 100%;
+  background-color: greenyellow; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  min-height: 10rem; }
+  .nav__brand {
+    display: flex;
+    flex: 0 1 40%;
+    align-items: center; }
+    .nav__brand h1 {
+      margin-left: -2rem; }
+  .nav__logo {
+    width: 12rem;
+    height: 10rem; }
+  .nav__links {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center; }
+    .nav__links ul {
+      display: flex; }
+  .nav__item {
+    list-style: none; }
+  .nav__item:not(:last-child) {
+    margin-right: 6rem; }
+  .nav__right {
+    display: flex;
+    justify-content: space-between;
+    flex: 1; }
+  .nav__search {
+    background-color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 0.5rem 0.6rem; }
+    .nav__search:hover {
+      cursor: pointer; }
+  .nav__search-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: #53594e; }
+  .nav__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 0 1 30%; }
+    .nav__user--name {
+      margin-left: 2rem; }
+
+.content {
+  min-height: 50rem;
+  display: flex; }
+  .content__left {
+    flex: 0 1 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  .content__line {
+    flex: 0 0 0.3%;
+    min-height: 50rem;
+    background-color: rgba(194, 210, 207, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+  .content__dot-no {
+    display: none; }
+  .content__dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: rgba(194, 210, 207, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif; }
+    .content__dot--1 {
+      top: 10rem;
+      left: -0.3rem;
+      margin-bottom: 5rem; }
+    .content__dot--2 {
+      top: 20rem;
+      left: -0.3rem; }
+    .content__dot--3 {
+      top: 30rem;
+      left: -0.3rem; }
+    .content__dot--4 {
+      top: 40rem;
+      left: -0.3rem; }
+    .content__dot--active {
+      left: -1rem;
+      width: 2rem;
+      height: 2rem; }
+      .content__dot--active span {
+        display: inline; }
+  .content__info {
+    flex: 0 1 80%; }
+  .content__details {
+    margin-bottom: 4rem; }
+  .content__right {
+    min-height: inherit;
+    max-height: 50rem;
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
+.btn {
+  padding: 1rem 2rem;
+  text-decoration: none; }
+  .btn-link {
+    border-radius: 1rem;
+    background-color: #1c7fdb; }
+
+.carousel__img {
+  height: 20rem;
+  width: 15rem;
+  border-radius: 1rem; }
+  .carousel__img-title {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    text-align: left; }
+
+.ratings {
+  display: flex;
+  margin: 0.5rem 0 1rem; }
+  .ratings__item {
+    margin: 0 0.2rem;
+    color: white;
+    font-size: 0.6rem; }
+    .ratings__item-light {
+      color: rgba(255, 255, 255, 0.5); }
+
+.carousel {
+  min-height: 50rem;
+  padding: 2rem; }
+
+.arrow {
+  border-radius: 50%;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 2rem;
+  background-color: rgba(83, 89, 78, 0.4);
+  backdrop-filter: blur(200px);
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s; }
+  .arrow:hover {
+    cursor: pointer;
+    background-color: rgba(83, 89, 78, 0.8); }
+
+.next {
+  top: 100%;
+  left: 10%; }
+
+.prev {
+  top: 100%;
+  left: 0; }
+
+.slide {
+  transform: scale(0.8);
+  transition: all 0.5s;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40rem;
+  display: flex !important;
+  align-items: baseline;
+  padding-left: 2rem; }
+
+.activeSlide {
+  padding: 1rem;
+  transform: scale(1.1);
+  opacity: 1;
+  height: 40rem;
+  display: flex !important;
+  flex-direction: column;
+  align-items: baseline; }
+  .activeSlide img {
+    height: 30rem;
+    width: 20rem; }

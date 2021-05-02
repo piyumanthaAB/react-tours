@@ -1,0 +1,79 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 3rem;
+  min-height: 10rem;
+
+  &__brand {
+    display: flex;
+    flex: 0 1 40%;
+    align-items: center;
+    // margin-left: -2rem;
+    // background-color: turquoise;
+
+    & h1 {
+      margin-left: -2rem;
+    }
+  }
+
+  &__logo {
+    width: 12rem;
+    height: 10rem;
+  }
+
+  &__links {
+    // background-color: tomato;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+
+    & ul {
+      display: flex;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 6rem;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  &__search {
+    background-color: $color-white;
+    border: none;
+    border-radius: 100px;
+    padding: 0.5rem 0.6rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__search-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: $color-gray;
+  }
+
+  &__user {
+    // background-color: seagreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    flex: 0 1 30%;
+
+    &--name {
+      margin-left: 2rem;
+    }
+  }
+}
