@@ -1,17 +1,16 @@
 import { React, useState } from "react";
 import Slider from "react-slick";
-
-import bali from "./../../assets/bali-P.jpg";
-import indonesia from "./../../assets/indonesia-P.jpg";
-import kerala from "./../../assets/kerala-P.jpg";
-import thailand from "./../../assets/thailand-P.jpg";
+import ReactStars from "react-rating-stars-component";
 
 import { FaArrowRight, FaArrowLeft, FaChevronRight, FaChevronLeft } from "react-icons/fa";
-import { BsChevronRight,BsChevronLeft,BsCircleFill,BsCircle } from "react-icons/bs";
+import { BsChevronRight, BsChevronLeft, BsCircleFill, BsCircle } from "react-icons/bs";
 
-const images = [bali, kerala, indonesia, thailand];
+import data from './data';
+
 
 function Carousel() {
+
+  
 
     const NextArrow = ({ onClick }) => {
         return (
@@ -33,7 +32,7 @@ function Carousel() {
         lazyLoad: true,
         speed: 300,
         slidesToShow: 3,
-        centerMode: false,
+        centerMode: true,
         centerPadding: 0,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
@@ -44,20 +43,34 @@ function Carousel() {
     
   return (
     <Slider className="carousel" {...settings}>
-      {images.map((img, idx) => {
+      {data.map((img, idx) => {
+        const ratingSettings = {
+          size: 10,
+  count: 5,
+  color: "black",
+  activeColor: "red",
+  edit: false,
+  value: img.rating,
+  a11y: true,
+  isHalf: true,
+  emptyIcon: <BsCircleFill className='ratings__item ratings__item-light'/>,
+  halfIcon: <BsCircleFill className='ratings__item ratings__item-light'/>,
+  filledIcon: <BsCircleFill className='ratings__item ' />
+          };
         return (
             <div className={idx === imageIndex ? 'slide activeSlide' : 'slide'}>
-                <h1 className='carousel__img-title'>Indonesia</h1>
+            <h1   className='carousel__img-title'>{img.country}</h1>
                 <div className="ratings">
 
-                <BsCircleFill className='ratings__item' />
-                <BsCircleFill className='ratings__item' />
-                <BsCircleFill className='ratings__item' />
-                <BsCircleFill className='ratings__item ratings__item-light' />
-                <BsCircleFill className='ratings__item ratings__item-light' />
+                <ReactStars  {...ratingSettings} />
                 </div>
+            
                 
-            <img className='carousel__img' src={img} alt={img} />
+            
+            
+            
+                
+            <img className='carousel__img' src={`${img.imgUrl}`}  alt={img} />
           </div>
         );
       })}

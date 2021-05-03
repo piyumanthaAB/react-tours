@@ -218,7 +218,8 @@ body {
 
 .ratings {
   display: flex;
-  margin: 0.5rem 0 1rem; }
+  margin: 0.5rem 0 1rem;
+  border: none; }
   .ratings__item {
     margin: 0 0.2rem;
     color: white;
@@ -264,11 +265,9 @@ body {
   justify-content: center;
   height: 40rem;
   display: flex !important;
-  align-items: baseline;
-  padding-left: 2rem; }
+  align-items: baseline; }
 
 .activeSlide {
-  padding: 1rem;
   transform: scale(1.1);
   opacity: 1;
   height: 40rem;
@@ -277,4 +276,4 @@ body {
   align-items: baseline; }
   .activeSlide img {
     height: 30rem;
-    width: 20rem; }
+    width: 18rem; }
