@@ -80,6 +80,10 @@
   display: flex !important;
   align-items: baseline;
   // padding-left: 2rem;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .activeSlide {

@@ -18,14 +18,22 @@ function App() {
 
   const [heading, setHeading] = useState(dataObj.heading);
   const [details, setDetails] = useState(dataObj.content);
+  const [backImage, setBackImage] = useState('thailand');
+  const [dot, setDot] = useState(0);
   
 
-  const animation = {
-
+  
+  const styles = {
+    backgroundImage: `url('/img/${backImage}-L.jpg')`
+    
   }
+ 
 
   return (
-    <div className="App">
+
+    
+
+    <div className="App" style={ styles }>
       
       <Nav />
 
@@ -34,7 +42,7 @@ function App() {
         <div className="content__left">
           
           <div className="content__line">
-            <div className="content__dot content__dot--1  "><span className='content__dot-no'> 1</span></div>
+            <div className= {`content__dot content__dot--1 `} ><span className='content__dot-no'> 1</span></div>
             <div className="content__dot content__dot--2 content__dot--active"><span className='content__dot-no'> 2</span></div>
             <div className="content__dot content__dot--3 "><span className='content__dot-no'> 3</span></div>
             <div className="content__dot content__dot--4 "><span className='content__dot-no'> 4</span></div>
@@ -58,7 +66,7 @@ function App() {
 
         <div className="content__right">
           
-          <Carousel setDetails={setDetails} setHeading={ setHeading}/>
+          <Carousel setBackImage={setBackImage} setDetails={setDetails} setHeading={ setHeading}/>
           
 
         </div>

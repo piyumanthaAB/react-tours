@@ -96,12 +96,28 @@ body {
     opacity: 1;
     transform: translateX(0); } }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .App {
   min-height: 70rem;
   background-color: #c2d2cf;
-  background-image: linear-gradient(25deg, rgba(4, 17, 23, 0.9) 0%, rgba(4, 17, 23, 0.4) 40%, rgba(4, 17, 23, 0.4) 60%, rgba(4, 17, 23, 0.9) 100%), url("./../img/bali-L.jpg");
+  position: relative;
   background-size: cover;
+  animation-name: fadeIn;
+  transition: all 0.5s;
   box-shadow: 0 2rem 2rem #125a53; }
+  .App::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(25deg, rgba(4, 17, 23, 0.7) 0%, rgba(4, 17, 23, 0.2) 40%, rgba(4, 17, 23, 0.2) 60%, rgba(4, 17, 23, 0.7) 100%); }
 
 #root {
   flex: 0 1 100%;
@@ -111,7 +127,9 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0 3rem;
-  min-height: 10rem; }
+  min-height: 10rem;
+  position: relative;
+  z-index: 10000; }
   .nav__brand {
     display: flex;
     flex: 0 1 40%;
@@ -161,7 +179,8 @@ body {
     flex: 0 1 50%;
     display: flex;
     justify-content: space-around;
-    align-items: center; }
+    align-items: center;
+    z-index: 10000; }
   .content__line {
     flex: 0 0 0.3%;
     min-height: 50rem;
@@ -282,6 +301,8 @@ body {
   height: 40rem;
   display: flex !important;
   align-items: baseline; }
+  .slide:focus {
+    outline: none; }
 
 .activeSlide {
   transform: scale(1.1);
