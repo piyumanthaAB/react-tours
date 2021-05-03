@@ -28,9 +28,18 @@
     font-size: 7rem;
   }
 
+  &__heading--animate {
+    animation-name: moveDown;
+    animation-duration: 1s;
+  }
+
   &__details {
     font-family: "Open Sans", sans-serif;
     color: $color-white;
+  }
+  &__details--animate {
+    animation-name: moveDown;
+    animation-duration: 1.5s;
   }
 }
 

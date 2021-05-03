@@ -8,20 +8,31 @@ import { BsChevronRight, BsChevronLeft, BsCircleFill, BsCircle } from "react-ico
 import data from './data';
 
 
-function Carousel() {
+
+
+function Carousel(props) {
 
   
 
-    const NextArrow = ({ onClick }) => {
+  const NextArrow = ({ onClick }) => {
+      
         return (
-          <div className="arrow next" onClick={onClick}>
-            <BsChevronRight />
+          <div className="arrow next" onClick={() => {
+            
+            
+             
+            onClick()
+          }}>
+           <BsChevronRight />
           </div>
         );
       };
       const PrevArrow = ({ onClick }) => {
         return (
-          <div className="arrow prev" onClick={onClick}>
+          <div className="arrow prev" onClick={() => {
+            onClick()
+            // props. setHeading('prev')
+          }}>
             <BsChevronLeft />
           </div>
         );
@@ -30,19 +41,26 @@ function Carousel() {
       const settings = {
         infinite: true,
         lazyLoad: true,
-        speed: 300,
+        speed: 800,
         slidesToShow: 3,
         centerMode: true,
         centerPadding: 0,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        beforeChange:(current,next)=>setImageIndex(next)
+        beforeChange: (current, next) => {
+          console.log(current);
+          setImageIndex(next)
+          const city=data[next].country
+          props.setHeading(city)
+          props.setDetails(data[next].content)
+          
+        }
     };
 
     const [imageIndex,setImageIndex]=useState(0);
     
   return (
-    <Slider className="carousel" {...settings}>
+    <Slider  className="carousel" {...settings}>
       {data.map((img, idx) => {
         const ratingSettings = {
           size: 10,
