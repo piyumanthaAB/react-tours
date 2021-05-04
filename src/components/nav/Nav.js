@@ -4,9 +4,9 @@ const Nav = () => {
         
         <div className="nav__brand">
           
-            <img src="./img/fox-logo.png" className="nav__logo" alt=""/>
+            <img src="./img/sri-tours-logo.png" className="nav__logo" alt=""/>
           
-          <h1>Foxico</h1>
+          <h1>Sri Tours</h1>
         </div>
 
         <div className="nav__right">

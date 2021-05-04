@@ -127,7 +127,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(25deg, rgba(4, 17, 23, 0.8) 0%, rgba(4, 17, 23, 0.2) 40%, rgba(4, 17, 23, 0.2) 60%, rgba(4, 17, 23, 0.8) 100%); }
+    background-image: linear-gradient(316deg, rgba(4, 17, 23, 0.8) 0%, rgba(4, 17, 23, 0.2) 20%, rgba(4, 17, 23, 0.5) 80%, rgba(4, 17, 23, 0.9) 100%); }
 
 #root {
   flex: 0 1 100%;
@@ -145,10 +145,13 @@ body {
     flex: 0 1 40%;
     align-items: center; }
     .nav__brand h1 {
-      margin-left: -2rem; }
+      background-image: linear-gradient(to right, #125a53, #1c7fdb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent; }
   .nav__logo {
-    width: 12rem;
-    height: 10rem; }
+    width: 5rem;
+    height: auto; }
   .nav__links {
     padding: 0 2rem;
     display: flex;

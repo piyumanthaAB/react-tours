@@ -11,14 +11,14 @@ function App() {
   // let detail=' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis mollitia cumque velit? Assumenda blanditiis sit distinctio delectus natus harum officia rem! Cumque doloremque magnam aut delectus quia sapiente quisquam deleniti.'
 
   const dataObj = {
-    heading: "Thailand",
+    heading: "Galle",
     content:`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis totam, non optio quia culpa,
     sapiente, est placeat hic voluptates vel doloremque a dolorem laborum fuga esse quas cumque aliquid soluta.`
   }
 
   const [heading, setHeading] = useState(dataObj.heading);
   const [details, setDetails] = useState(dataObj.content);
-  const [backImage, setBackImage] = useState('thailand');
+  const [backImage, setBackImage] = useState('galle');
 
   const [dot_1, setDot_1] = useState(1);
   const [dot_2, setDot_2] = useState(0);
