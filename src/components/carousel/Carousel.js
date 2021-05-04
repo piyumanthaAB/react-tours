@@ -48,15 +48,17 @@ function Carousel(props) {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => {
+          console.log({current,next});
           setImageIndex(next)
           const city=data[next].country
           props.setHeading(city)
           props.setDetails(data[next].content)
           props.setBackImage(city.toLowerCase())
+          props.handleDotState(next)
           
         },
         afterChange: (current, next) => {
-          console.log({current,next});
+          
         }
     };
 
