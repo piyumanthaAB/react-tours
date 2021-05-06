@@ -6,5 +6,11 @@
   &-link {
     border-radius: 1rem;
     background-color: $color-blue;
+
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: $color-primary-light-1;
+    }
   }
 }

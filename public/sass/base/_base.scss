@@ -37,12 +37,9 @@ body {
   justify-content: center;
 
   min-height: 100vh;
-  // background-image: url("./../../img/kerala-L.jpg");
-  // background-size: cover;
-  // background-repeat: no-repeat;
 }
 
-// ::selection {
-//   background-color: $color-primary;
-//   color: $color-white;
-// }
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

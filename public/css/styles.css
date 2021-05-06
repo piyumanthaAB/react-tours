@@ -50,6 +50,10 @@ body {
   justify-content: center;
   min-height: 100vh; }
 
+::selection {
+  background-color: #125a53;
+  color: #fff; }
+
 .nav {
   color: #fff; }
   .nav__brand {
@@ -127,7 +131,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(316deg, rgba(4, 17, 23, 0.8) 0%, rgba(4, 17, 23, 0.2) 20%, rgba(4, 17, 23, 0.5) 80%, rgba(4, 17, 23, 0.9) 100%); }
+    background-image: linear-gradient(25deg, rgba(4, 17, 23, 0.7) 0%, rgba(4, 17, 23, 0.2) 20%, rgba(4, 17, 23, 0.2) 60%, rgba(4, 17, 23, 0.7) 100%); }
 
 #root {
   flex: 0 1 100%;
@@ -143,14 +147,13 @@ body {
   .nav__brand {
     display: flex;
     flex: 0 1 40%;
-    align-items: center; }
+    align-items: center;
+    margin-left: -2rem; }
     .nav__brand h1 {
-      background-image: linear-gradient(to right, #125a53, #1c7fdb);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent; }
+      margin-left: -4rem;
+      color: #fff; }
   .nav__logo {
-    width: 5rem;
+    width: 15rem;
     height: auto; }
   .nav__links {
     padding: 0 2rem;
@@ -256,7 +259,10 @@ body {
   text-decoration: none; }
   .btn-link {
     border-radius: 1rem;
-    background-color: #1c7fdb; }
+    background-color: #1c7fdb;
+    transition: all 0.4s; }
+    .btn-link:hover {
+      background-color: #1d6264; }
 
 .carousel__img {
   height: 20rem;
