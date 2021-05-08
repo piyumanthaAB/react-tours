@@ -1,0 +1,124 @@
+.contact {
+  width: 100%;
+  min-height: 60rem;
+  //   background-color: rgba($color: red, $alpha: 0.5);
+  //   backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 999999999;
+  // box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &--animated {
+    animation-name: moveLeft;
+    animation-duration: 0.5s;
+  }
+
+  &__content {
+    width: 100%;
+    min-height: 35rem;
+    position: relative;
+    // background-color: rosybrown;
+  }
+
+  &__heading {
+    position: absolute;
+    bottom: 2rem;
+    left: 10rem;
+
+    // margin-left: 2rem;
+  }
+
+  &__footer {
+    width: 100%;
+    min-height: 25rem;
+
+    display: flex;
+    align-items: flex-start;
+    padding: 6rem 10rem;
+
+    // justify-content: space-between;
+    // background-color: royalblue;
+  }
+
+  &__address {
+    flex: 0 1 30%;
+
+    &-title {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__details {
+    flex: 0 1 30%;
+    &-title {
+      margin-bottom: 3rem;
+    }
+    // background-color: saddlebrown;
+  }
+
+  &__icons {
+    flex: 0 1 40%;
+    display: flex;
+    align-self: flex-end;
+
+    position: relative;
+
+    &-text {
+      font-family: "Poppins", sans-serif;
+      color: $color-white;
+      position: absolute;
+      bottom: 1rem;
+      right: 10rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__icon-container {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100px;
+    background-color: $color-gray-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.2s;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($color: $color-primary, $alpha: 1);
+    }
+
+    &:hover .contact__icon {
+      transform: rotate(360deg);
+      color: $color-gray-light;
+    }
+  }
+  &__icon {
+    font-size: 1.5rem;
+    transition: all 1s;
+    // color: rgba($color: $color-primary, $alpha: 1);
+  }
+
+  &__form-container {
+    width: 40rem;
+    min-height: 40rem;
+
+    background-color: rgba($color: $color-white, $alpha: 1);
+    // backdrop-filter: blur(100px);
+    position: absolute;
+    top: 0;
+    right: 10rem;
+
+    padding: 2rem 4rem;
+
+    box-shadow: 0 2rem 2rem rgba($color-primary, 1);
+  }
+}

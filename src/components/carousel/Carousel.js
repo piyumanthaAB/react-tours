@@ -53,7 +53,7 @@ function Carousel(props) {
           const city=data[next].country
           props.setHeading(city)
           props.setDetails(data[next].content)
-          props.setBackImage(city.toLowerCase())
+          props.setImage(city.toLowerCase())
           props.handleDotState(next)
           
         },
@@ -65,7 +65,7 @@ function Carousel(props) {
     const [imageIndex,setImageIndex]=useState(0);
     
   return (
-    <Slider  className="carousel" {...settings}>
+    <Slider  className="carousel carousel--animated" {...settings}>
       {data.map((img, idx) => {
         const ratingSettings = {
           size: 10,

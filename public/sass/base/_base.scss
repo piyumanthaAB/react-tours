@@ -31,12 +31,23 @@ body {
   box-sizing: border-box;
   background-color: #59abae;
   padding: 1rem 20rem;
+  // background-image: url("/../img/thailand-L.jpg");
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   min-height: 100vh;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+  }
 }
 
 ::selection {

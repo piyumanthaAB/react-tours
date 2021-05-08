@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import Carousel from './carousel/Carousel';
+
 const Home = (props) => {
+
+  props.setNavActive('tours')
+  // props.setBackImage('thailand')
+
+  
+
     const dataObj = {
         heading: "Thailand",
         content:`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis totam, non optio quia culpa,
@@ -9,7 +16,9 @@ const Home = (props) => {
     
       const [heading, setHeading] = useState(dataObj.heading);
       const [details, setDetails] = useState(dataObj.content);
-    //   const [backImage, setBackImage] = useState('thailand');
+      const [image, setImage] = useState('thailand')
+  
+  props.setBackImage(image);
     
       const [dot_1, setDot_1] = useState(1);
       const [dot_2, setDot_2] = useState(0);
@@ -71,7 +80,7 @@ const Home = (props) => {
               
             </p>
 
-            <a href="#" className='btn btn-link'>Explore &nbsp; <span>&rarr;  </span> </a>
+            <a href={`/${heading.toLowerCase()}`} className='btn btn-link'>Explore &nbsp; <span>&rarr;  </span> </a>
 
           </div>
 
@@ -80,7 +89,7 @@ const Home = (props) => {
 
         <div className="content__right">
           
-          <Carousel handleDotState={handleDotState} setBackImage={props.setBackImage} setDetails={setDetails} setHeading={ setHeading}/>
+          <Carousel handleDotState={handleDotState} setImage={setImage} setDetails={setDetails} setHeading={ setHeading}/>
           
 
         </div>

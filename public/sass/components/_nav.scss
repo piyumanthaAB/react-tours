@@ -3,7 +3,7 @@
   justify-content: space-between;
 
   padding: 0 3rem;
-  min-height: 10rem;
+  max-height: 10rem;
 
   position: relative;
   z-index: 10000;
@@ -35,7 +35,6 @@
   }
 
   &__links {
-    // background-color: tomato;
     padding: 0 2rem;
     display: flex;
     align-items: center;
@@ -47,6 +46,13 @@
 
   &__item {
     list-style: none;
+    border-bottom: 2px solid rgba($color: $color-white, $alpha: 0);
+    padding: 0 0 0.5rem;
+    transition: all 0.6s;
+
+    &--active {
+      border-bottom: 2px solid rgba($color: $color-white, $alpha: 1);
+    }
   }
 
   &__item:not(:last-child) {

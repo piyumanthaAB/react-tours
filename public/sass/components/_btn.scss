@@ -13,4 +13,75 @@
       background-color: $color-primary-light-1;
     }
   }
+
+  &--submit {
+    background-color: #333;
+    color: $color-white;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    transition: all 0.2s;
+
+    &-icon {
+      font-size: 2rem;
+      margin-left: 1rem;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    :active {
+      outline: none;
+      cursor: pointer;
+    }
+    &:hover {
+      // box-shadow: 0 1rem 1rem rgba($color-primary, 1);
+    }
+
+    &:hover .btn--submit-icon {
+      transform: translateX(5px);
+    }
+    &:active {
+      box-shadow: 0.5rem 0.5rem 0.5rem rgba($color-primary, 1);
+    }
+  }
+
+  &--book {
+    margin: 5rem auto;
+    width: 40%;
+    background-color: rgba($color: $color-white, $alpha: 1);
+    color: #333;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.2s;
+
+    &:hover .btn--book-icon {
+      transform: translateX(5px);
+    }
+
+    &-icon {
+      margin-left: 1rem;
+      font-size: 2rem;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    :active {
+      outline: none;
+      cursor: pointer;
+      // background-color: rgba($color: #333, $alpha: 1);
+      // color: $color-white;
+      box-shadow: 0.5rem 1rem 3rem rgba($color-primary, 1);
+    }
+
+    &:active {
+      box-shadow: 0.5rem 0.5rem 0.5rem rgba($color-primary, 1);
+    }
+  }
 }

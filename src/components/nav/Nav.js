@@ -1,4 +1,10 @@
-const Nav = () => {
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+const Nav = (props) => {
+
+  
+
+  
     return (
         <div className="nav">
         
@@ -15,10 +21,10 @@ const Nav = () => {
             <ul>
             
               
-              <li className="nav__item"><a  href="#">Tours </a></li>
-              <li className="nav__item"><a  href="#">Destinations </a></li>
-              <li className="nav__item"><a  href="#">Blog </a></li>
-              <li className="nav__item"><a  href="#">Contact </a></li>
+              <li className={`nav__item ${(props.navActive==='tours'?'nav__item--active':'')}`}><Link to='/'>Tours</Link></li>
+              <li className={`nav__item ${(props.navActive==='destinations'?'nav__item--active':'')}`}><a  href="#">Destinations </a></li>
+              <li className={`nav__item ${(props.navActive==='blog'?'nav__item--active':'')}`}><a  href="/blog">Blog </a></li>
+              <li className={`nav__item ${(props.navActive==='contact'?'nav__item--active':'')}`}><Link to='/contact'>Contact</Link></li>
               
             </ul>
           </div>

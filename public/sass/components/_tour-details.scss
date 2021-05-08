@@ -1,0 +1,103 @@
+.tour-details {
+  width: 100%;
+  min-height: 60rem;
+  //   background-color: red;
+  display: flex;
+  //   flex-direction: column;
+  justify-content: center;
+  //   align-items: center;
+
+  animation-name: fadeIn;
+  animation-duration: 1s;
+
+  &__container {
+    display: flex;
+    margin-top: 2rem;
+    width: 80%;
+    max-height: 50rem;
+    background-color: rgba($color: $color-white, $alpha: 0.1);
+
+    backdrop-filter: blur(2px);
+
+    &--animated {
+      animation-name: moveLeft;
+      animation-duration: 0.5s;
+    }
+  }
+
+  &__left {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 0 0 5rem;
+    // background-color: red;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 50%;
+      font-size: 5rem;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    max-height: 50rem;
+    // background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  &__heading {
+    // background-color: rosybrown;
+    padding: 0;
+  }
+
+  &__description {
+    width: 30rem;
+    margin-top: 2rem;
+  }
+
+  &__icons {
+    // background-color: rosybrown;
+    // flex: 0 1 20%;
+    margin: 3rem auto;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 5rem;
+    // text-align: right;
+  }
+
+  &__icon {
+    // text-align: right;
+    flex: 0 1 50%;
+    font-size: 1.5rem;
+    color: rgba($color: $color-white, $alpha: 1);
+    font-family: "Poppins", sans-serif;
+  }
+
+  &__img {
+    padding: 1rem;
+    height: 25rem;
+    width: auto;
+    min-height: 25rem;
+    background-image: url("../img/bali-tour-desc-L.jpg");
+    background-size: cover;
+    background-position: top;
+    transition: all 0.5s;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

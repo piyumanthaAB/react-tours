@@ -31,12 +31,19 @@
   // background-color: yellow;
   min-height: 50rem;
   padding: 2rem;
+
+  &--animated {
+    animation-name: moveUpFadeIn;
+    animation-duration: 1.5s;
+  }
 }
 
 .arrow {
   border-radius: 50%;
   padding: 1rem;
   color: rgba($color: $color-white, $alpha: 0.8);
+
+  border: 2px solid rgba($color: $color-white, $alpha: 0.5);
 
   font-size: 2rem;
 
