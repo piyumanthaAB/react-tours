@@ -5,6 +5,7 @@ import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import Blog from './components/Blog';
 import TourDetails from './components/TourDetails';
+import CheckOut from './components/CheckOut';
 
 import { BrowserRouter as Router, Route, Switch,Redirect } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ function App() {
   const [backImage, setBackImage] = useState('thailand');
   const [navActive, setNavActive] = useState('tours')
   
-  console.log(backImage);
+  // console.log(backImage);
 
   const styles = {
     backgroundImage: `url('/img/${backImage}-L.jpg')`
@@ -57,6 +58,9 @@ function App() {
             </Route>
             <Route exact path='/:tour'>
               <TourDetails  setNavActive={setNavActive} setBackImage={setBackImage} />
+            </Route>
+            <Route exact path='/checkout/:tour'>
+              <CheckOut  setNavActive={setNavActive} setBackImage={setBackImage} />
             </Route>
             
             

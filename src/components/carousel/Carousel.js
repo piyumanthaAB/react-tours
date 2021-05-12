@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import Slider from "react-slick";
 import ReactStars from "react-rating-stars-component";
 
-import { FaArrowRight, FaArrowLeft, FaChevronRight, FaChevronLeft } from "react-icons/fa";
+// import { FaArrowRight, FaArrowLeft, FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { BsChevronRight, BsChevronLeft, BsCircleFill, BsCircle } from "react-icons/bs";
 
 import data from './data';

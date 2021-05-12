@@ -5,11 +5,20 @@ import { FiShoppingCart} from "react-icons/fi";
 import { CgDollar} from "react-icons/cg";
 import { useState } from "react";
 
+import NotFound from './NotFound';
+
+import {Redirect } from 'react-router-dom';
+
+
 // BsFillPeopleFill,BsCompass,BsStopwatchFill,BiDollarCircle
 
 const TourDetails = (props) => {
 
     const { tour } = useParams()
+
+    const tours = ['thailand','bali','kerala','indonesia'];
+
+  
     
     props.setNavActive('none');
     props.setBackImage(`${tour}-tour`);
@@ -19,7 +28,14 @@ const TourDetails = (props) => {
     const styles = {
         backgroundImage: `url('/img/${descImage}-L.jpg')`
         
-      }
+    }
+    if (!tours.includes(tour)) {
+        // console.log(tour);
+        return (
+            // <Redirect from='*' to='/404' />
+            <NotFound setBackImage={props.setBackImage} setNavActive={ props.setNavActive}/>
+        )
+    }
     return (
         <div className='tour-details'>
             <div className="tour-details__container tour-details__container--animated">
